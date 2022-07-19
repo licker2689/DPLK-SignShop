@@ -1,6 +1,7 @@
 package com.github.licker2689.dplksignshop.event;
 
 import com.github.licker2689.dplksignshop.DPLKSignShop;
+import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.command.TabCompleter;
@@ -17,6 +18,11 @@ public class DLSsEvent implements Listener {
 
     @EventHandler
     public void onClickSign(PlayerInteractEvent e){
+        if (e.getClickedBlock().getType() == Material.SIGN_POST || e.getClickedBlock().getType() == Material.WALL_SIGN) {
+            Player p = e.getPlayer();
+
+        }
+
 
 
     }
