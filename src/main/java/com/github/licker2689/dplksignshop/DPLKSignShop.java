@@ -3,6 +3,7 @@ package com.github.licker2689.dplksignshop;
 import com.darksoldier1404.dppc.lang.DLang;
 import com.darksoldier1404.dppc.utils.ConfigUtils;
 import com.github.licker2689.dplksignshop.command.DLSsCommand;
+import com.github.licker2689.dplksignshop.event.DLSsEvent;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.Location;
@@ -32,7 +33,7 @@ public final class DPLKSignShop extends JavaPlugin {
         plugin = this;
         config = ConfigUtils.loadDefaultPluginConfig(plugin);
         lang = new DLang("Korean", plugin);
-        // plugin.getServer().getPluginManager().registerEvents(new DLSsEvent(), plugin);
+        plugin.getServer().getPluginManager().registerEvents(new DLSsEvent(), plugin);
         getCommand("dlss").setExecutor(new DLSsCommand());
 
     }
