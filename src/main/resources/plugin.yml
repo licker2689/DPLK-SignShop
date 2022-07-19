@@ -1,0 +1,5 @@
+name: DPLK SignShop
+version: '${version}'
+main: com.github.licker2689.dplksignshop.DPLKSignShop
+api-version: 1.19
+authors: [ darksoldier1404, LICKER2689 ]

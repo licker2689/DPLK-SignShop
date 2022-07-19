@@ -1,0 +1,48 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.github.licker2689'
+version = '1.0-SNAPSHOT'
+
+compileJava.options.encoding = 'UTF-8'
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+configurations {
+    jar.archiveName = 'DPLK-SignShop-_' + name + '-' + version + '.jar'
+}
+jar {
+    destinationDirectory.set(file("$rootDir/jars"))
+}
+
+build {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url "http://dpp.dpnw.site:8081/repository/maven-releases/"
+        allowInsecureProtocol = true
+    }
+    maven {
+        url "http://dpp.dpnw.site:8081/repository/dpp-releases/"
+        allowInsecureProtocol = true
+    }
+    maven {
+        url "http://dpp.dpnw.site:8081/repository/maven-snapshots/"
+        allowInsecureProtocol = true
+    }
+}
+
+dependencies {
+    implementation 'org.jetbrains:annotations:20.1.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    compileOnly 'org.bukkit.craftbukkit:craftbukkit:R0.1:1.12.2'
+    compileOnly 'org.spigotmc:spigot-api:R0.1:1.12.2'
+    compileOnly 'com.darksoldier1404.dppc:DPP-Core:1.12.2-SNAPSHOT'
+    compileOnly 'com.darksoldier1404.dss:DP-SimpleShop:1.12-1.0.2.13'
+}

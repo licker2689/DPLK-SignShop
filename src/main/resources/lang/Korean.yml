@@ -1,0 +1,4 @@
+Lang: Korean
+
+  shop_cmd_create: "/dlss create <상점 이름>"
+    shop_cmd_edit: "/dlss edit <상점 이름>"
