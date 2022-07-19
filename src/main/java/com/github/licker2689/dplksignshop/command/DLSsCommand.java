@@ -21,8 +21,8 @@ public class DLSsCommand implements CommandExecutor {
     private final DPLKSignShop plugin = DPLKSignShop.getInstance();
 
     private final DLang lang = plugin.lang;
+    
 
-    public String name;
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String s, @NotNull String[] args) {
@@ -52,17 +52,17 @@ public class DLSsCommand implements CommandExecutor {
                         return false;
                     }
                     DSSFunction.createShop(sender, args[1], args[2]);
-                    name = args[1];
-                    if (plugin.signs.containsKey(name)) {
+                    plugin.name = args[1];
+                    if (plugin.signs.containsKey(plugin.name)) {
                         p.sendMessage(plugin.prefix + "이미 존재하는 상점입니다.");
                         return false;
                     }
-                    plugin.signs.put(name, new Location(p.getWorld(), p.getEyeLocation().getBlockX(), p.getEyeLocation().getBlockY(), p.getEyeLocation().getBlockZ()));
+                    plugin.signs.put(new Location(p.getWorld(), p.getEyeLocation().getBlockX(), p.getEyeLocation().getBlockY(), p.getEyeLocation().getBlockZ()), plugin.name);
                     p.sendMessage(plugin.prefix + "상점을 생성했습니다.");
-                    plugin.config.set("Settings.warps." + name + ".world", p.getWorld().getName());
-                    plugin.config.set("Settings.warps." + name + ".x", p.getEyeLocation().getBlockX());
-                    plugin.config.set("Settings.warps." + name + ".y", p.getEyeLocation().getBlockY());
-                    plugin.config.set("Settings.warps." + name + ".z", p.getEyeLocation().getBlockZ());
+                    plugin.config.set("Settings.warps." + plugin.name + ".world", p.getWorld().getName());
+                    plugin.config.set("Settings.warps." + plugin.name + ".x", p.getEyeLocation().getBlockX());
+                    plugin.config.set("Settings.warps." + plugin.name + ".y", p.getEyeLocation().getBlockY());
+                    plugin.config.set("Settings.warps." + plugin.name + ".z", p.getEyeLocation().getBlockZ());
 
                     return false;
                 }

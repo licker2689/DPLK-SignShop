@@ -7,6 +7,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.Location;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,11 +19,13 @@ public final class DPLKSignShop extends JavaPlugin {
 
     public static DLang lang;
 
-    public static Map<String, Location> signs = new HashMap<>();
+    public static Map<Location, String> signs = new HashMap<>();
 
     public static DPLKSignShop getInstance() {
         return plugin;
     }
+
+    public String name;
 
     @Override
     public void onEnable() {
