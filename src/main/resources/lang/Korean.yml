@@ -1,4 +1,5 @@
 Lang: Korean
 
   shop_cmd_create: "/dlss create <상점 이름>"
-    shop_cmd_edit: "/dlss edit <상점 이름>"
+  shop_cmd_edit: "/dlss edit <상점 이름>"
+  shop_cmd_not_sign : "표지판이 아닙니다!"

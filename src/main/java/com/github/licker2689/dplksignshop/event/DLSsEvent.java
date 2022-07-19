@@ -17,7 +17,7 @@ public class DLSsEvent implements Listener {
 
     @EventHandler
     public void onClickSign(PlayerInteractEvent e){
-        
+
 
     }
 
