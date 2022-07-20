@@ -1,5 +1,7 @@
-Lang: Korean
-
-  shop_cmd_create: "/dlss create <상점 이름>"
-  shop_cmd_edit: "/dlss edit <상점 이름>"
-  shop_cmd_not_sign : "표지판이 아닙니다!"
+Lang: "Korean"
+#
+shop_cmd_create: "/dlss create <상점 이름>"
+shop_cmd_edit: "/dlss edit <상점 이름>"
+shop_cmd_not_sign: "표지판이 아닙니다!"
+shop_cmd_require_name: "상점 이름이 필요합니다!"
+shop_cmd_permission_required: "상점 관리 권한이 필요합니다!"
