@@ -36,7 +36,7 @@ public class DLSsEvent implements Listener {
                 Location location = e.getClickedBlock().getLocation();
                 ShopName = plugin.signs.get(location);
                 if (ShopName.equals(null)) {
-                    p.sendMessage(plugin.prefix + "§a" + ShopName + "§f이 없습니다.");
+                    p.sendMessage(plugin.data.getPrefix() + "§a" + ShopName + "§f이 없습니다.");
                 } else {
                     openShop(p, ShopName);
                 }

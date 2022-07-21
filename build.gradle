@@ -3,7 +3,7 @@ plugins {
 }
 
 group = 'com.github.licker2689'
-version = '1.0-SNAPSHOT'
+version = '1.0-official'
 
 compileJava.options.encoding = 'UTF-8'
 tasks.withType(JavaCompile) {
