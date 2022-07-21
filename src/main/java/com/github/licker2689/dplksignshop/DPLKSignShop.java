@@ -1,9 +1,12 @@
 package com.github.licker2689.dplksignshop;
 
 import com.darksoldier1404.dppc.lang.DLang;
+import com.darksoldier1404.dppc.utils.ColorUtils;
 import com.darksoldier1404.dppc.utils.ConfigUtils;
+import com.darksoldier1404.dppc.utils.DataContainer;
 import com.github.licker2689.dplksignshop.command.DLSsCommand;
 import com.github.licker2689.dplksignshop.event.DLSsEvent;
+import com.github.licker2689.dplksignshop.DPLKSignShop;
 import org.apache.commons.collections4.BidiMap;
 import org.apache.commons.collections4.MapIterator;
 import org.bukkit.Bukkit;
@@ -14,16 +17,13 @@ import org.bukkit.Location;
 
 import java.util.*;
 
-import com.github.licker2689.dplksignshop.event.DLSsEvent;
 import org.jetbrains.annotations.NotNull;
 
 public final class DPLKSignShop extends JavaPlugin implements Listener {
+
     private static DPLKSignShop plugin;
-    public static YamlConfiguration config;
 
-    public static final String prefix = "§f[ §aDLSs §f] ";
-
-    public static DLang lang;
+    public static DataContainer data;
 
     public static BidiMap<Location, String> signs = new BidiMap<Location, String>() {
         @Override
@@ -118,16 +118,15 @@ public final class DPLKSignShop extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         plugin = this;
-        config = ConfigUtils.loadDefaultPluginConfig(plugin);
-        lang = new DLang(config.getString("Settings.Lang") == null ? "Korean" : config.getString("Settings.Lang"), plugin);
+        data = new DataContainer(plugin);
         plugin.getServer().getPluginManager().registerEvents(new DLSsEvent(), plugin);
-        Objects.requireNonNull(getCommand("dlss")).setExecutor(new DLSsCommand());
+        getCommand("dlss").setExecutor(new DLSsCommand());
 
     }
 
 
     @Override
     public void onDisable() {
-        ConfigUtils.savePluginConfig(plugin, config);
+        data.save();
     }
 }

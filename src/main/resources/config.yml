@@ -1,5 +1,5 @@
 Settings:
-  prefix: "&f[ &aSignShop &f] "
+  prefix: "&f[ &a DPLK-SignShop &f] "
   display: true
-  Lang: English
+  Lang: Korean
   preventInvClose: true
