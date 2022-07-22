@@ -26,19 +26,19 @@ public class DLSsCommand implements CommandExecutor {
         Player p = (Player) sender;
 
         if (args.length == 0) {
-            sender.sendMessage(plugin.data.getPrefix() + ("shop_cmd_create"));
-            sender.sendMessage(plugin.data.getPrefix() + ("shop_cmd_edit"));
+            sender.sendMessage(plugin.data.getPrefix() + ("/dlss create <상점 이름>"));
+            sender.sendMessage(plugin.data.getPrefix() + ("/dlss edit <상점 이름>"));
             return false;
         }
 
         if (args.length == 1) {
             if (args[0].equals("생성") || args[0].equalsIgnoreCase("create")) {
                 if (!sender.hasPermission("dss.admin")) {
-                    sender.sendMessage(plugin.data.getPrefix() + "shop_cmd_permission_required");
+                    sender.sendMessage(plugin.data.getPrefix() + "상점 관리 권한 이 필요합니다");
                     return false;
                 }
                 if (args.length == 1) {
-                    sender.sendMessage(plugin.data.getPrefix() + "shop_cmd_require_name");
+                    sender.sendMessage(plugin.data.getPrefix() + "상점 이름이 필요합니다");
                     return false;
                 }
                 if (args.length == 2) {
@@ -64,11 +64,11 @@ public class DLSsCommand implements CommandExecutor {
             }
             if (args[0].equals("진열") || args[0].equalsIgnoreCase("display")) {
                 if (!sender.hasPermission("dss.admin")) {
-                    sender.sendMessage(plugin.data.getPrefix() + "shop_cmd_permission_required");
+                    sender.sendMessage(plugin.data.getPrefix() + "상점 관리 권한 이 필요합니다");
                     return false;
                 }
                 if (args.length == 1) {
-                    sender.sendMessage(plugin.data.getPrefix() + "shop_cmd_require_name");
+                    sender.sendMessage(plugin.data.getPrefix() + "상점 이름이 필요합니다");
                     return false;
                 }
                 if (args.length == 2) {
@@ -78,11 +78,11 @@ public class DLSsCommand implements CommandExecutor {
             }
             if (args[0].equals("가격") || args[0].equalsIgnoreCase("price")) {
                 if (!sender.hasPermission("dss.admin")) {
-                    sender.sendMessage(plugin.data.getPrefix() + "shop_cmd_permission_required");
+                    sender.sendMessage(plugin.data.getPrefix() + "상점 관리 권한 이 필요합니다");
                     return false;
                 }
                 if (args.length == 1) {
-                    sender.sendMessage(plugin.data.getPrefix() + "shop_cmd_require_name");
+                    sender.sendMessage(plugin.data.getPrefix() + "상점 이름이 필요합니다");
                     return false;
                 }
                 if (args.length == 2) {
@@ -129,11 +129,11 @@ public class DLSsCommand implements CommandExecutor {
             }
             if (args[0].equals("타이틀") || args[0].equalsIgnoreCase("title")) {
                 if (!sender.hasPermission("dss.admin")) {
-                    sender.sendMessage(plugin.data.getPrefix() + "shop_cmd_permission_required");
+                    sender.sendMessage(plugin.data.getPrefix() + "상점 관리 권한 이 필요합니다");
                     return false;
                 }
                 if (args.length == 1) {
-                    sender.sendMessage(plugin.data.getPrefix() + "shop_cmd_require_name");
+                    sender.sendMessage(plugin.data.getPrefix() + "상점 이름이 필요합니다");
                     return false;
                 }
                 if (args.length == 2) {
@@ -145,11 +145,11 @@ public class DLSsCommand implements CommandExecutor {
             }
             if (args[0].equals("삭제") || args[0].equalsIgnoreCase("delete")) {
                 if (!sender.hasPermission("dss.admin")) {
-                    sender.sendMessage(plugin.data.getPrefix() + "shop_cmd_permission_required");
+                    sender.sendMessage(plugin.data.getPrefix() + "상점 관리 권한 이 필요합니다");
                     return false;
                 }
                 if (args.length == 1) {
-                    sender.sendMessage(plugin.data.getPrefix() + "shop_cmd_require_name");
+                    sender.sendMessage(plugin.data.getPrefix() + "상점 이름이 필요합니다");
 
                     return false;
                 }
