@@ -31,7 +31,7 @@ public class DLSsEvent implements Listener {
         String ShopName;
 
         if ((e.getAction() == Action.RIGHT_CLICK_BLOCK)) {
-            if (e.getClickedBlock().getType() == Material.LEGACY_SIGN_POST || e.getClickedBlock().getType() == Material.LEGACY_WALL_SIGN) {
+            if (e.getClickedBlock().getType() == Material.SIGN_POST || e.getClickedBlock().getType() == Material.WALL_SIGN) {
 
                 Location location = e.getClickedBlock().getLocation();
                 ShopName = plugin.signs.get(location);
